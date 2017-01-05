@@ -1,0 +1,21 @@
+/* 整体项目的布局css */
+html,body {
+	height: 100%;
+}
+.section {
+	height: 100%;
+	width:100%;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 200px;
+	text-align: center;
+	background: black;
+	color: white;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+	display: none;
+}
+.section a {
+	color: white;
+    text-decoration: none;
+}
