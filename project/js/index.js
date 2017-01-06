@@ -21,7 +21,7 @@ function routeController(hash){
 		prevModule.leave(); 
 	}
 	curModule.enter();
-
+	curModule.init();
 }
 
 if(location.hash) {
@@ -32,5 +32,5 @@ if(location.hash) {
 }
 window.onhashchange = function(){
 	var hash = location.hash.slice(1); 
-	routeController(hash) 	
+	routeController(hash);	
 }

@@ -9,9 +9,36 @@
 	<script src="js/rem.js"></script>
 </head>
 <body>
-	<div id="search" class="section"><a href="#city">餐厅搜索页</a></div>
+	<div id="search" class="section">
+		<div class="header">
+		<p class="cityname">上海<a href="#city">切换城市</a></p>
+		<hr>
+		<div class="searchwarp">
+			<div class="search">
+			<input type="text" class="txt" placeholder="搜索">
+		</div>
+		
+		<div class="submit">
+			<input type="button" id="ele" value="饿了么">
+			<input type="button" id="parcel" value="百度外卖">
+		</div>
+		<hr>
+		<ul id="list1"></ul>
+		</div>
+	</div>
+		
+	</div>
 	<div id="detail" class="section"><a href="#search">餐厅详情页</a></div>
-	<div id="city" class="section"><a href="#list">城市选择页</a></div>
+	<div id="city" class="section">
+	<div class="warp">
+		<p class="cityname"><a href="#search">餐厅搜索页</a></p>
+		<p class="word">热门算法</p>
+		<ul id="list2"></ul>
+		<p class="word">按字母排序</p>
+		<ul id="list3"></ul>
+	</div>
+	
+	</div>
 	<div id="list" class="section"><a href="#detail">餐厅列表页</a></div>
 	<script src="js/zepto.js"></script>
 	<script src="js/module/searchObj.js"></script>
