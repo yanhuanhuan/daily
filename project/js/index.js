@@ -14,7 +14,18 @@ var curModule = null;  //当前模块
 
 function routeController(hash){
 	//路由控制方法  hash = address  hash = citylist
+	var chash = '';
 	var module = hashMap[hash] || hashMap['search']; // 得到对应hash值的对应的模块对象
+	if( hash.indexOf('search') !== -1){
+		module = searchObj;
+		chash = 'search';
+		module.changeCity(hash);
+	}
+	if( hash.indexOf('list') !== -1){
+		module = listObj;
+		// chash = 'search';
+		module.loadlist(hash);
+	}
 	prevModule = curModule; 
 	curModule = module; 
 	if(prevModule) {
