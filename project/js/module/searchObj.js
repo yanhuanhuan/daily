@@ -8,6 +8,18 @@ var searchObj = {
 		//绑定它自己应该绑定的事件	
 	},
 	onEvent: function(){
+		
+		$('#list1').on('click','a',function(event){
+			// console.log(1)
+			event.preventDefault(); //阻止它的默认事件
+			var addinfo = {
+				lat: this.dataset.lat,
+				lng: this.dataset.lng,
+				name: this.dataset.name
+			}
+			storage('listdata', addinfo);
+			location.href = '#list-' + this.dataset.geo;  	
+		});
 		var elethis = this;
 		var parcel = $('#parcel');
 		var ele = $('#ele');
@@ -23,18 +35,19 @@ var searchObj = {
 					type: 'search'
 				},
 				success:function( res ){
-					// console.log(res)
+					console.log(res)
 					var html = '';
 					for( var i = 0; i < res.length; i++){
-						html +='<li><a href="#list-'+ res[i].latitude +'-'+ res[i].longitude +'">'+res[i].name+'<p class="address">'+res[i].address+'</p></a></li>';
+						html +='<li><a id="add" data-geo="'+res[i].geohash+'" data-lng="'+ res[i].longitude +'" data-lat="'+ res[i].latitude +'"  data-id="'+res[i].id+'" href="#rlist"">'+res[i].name+'<p class="address">'+res[i].address+'</p></a></li>';
 					}
+					// console.log(res[1].geohash)
 					$('#list1').html(html);
 				},
 				error:function(){
 					console.log('我请求失败了');	 	
 				}
 			})
-		})
+		});
 		parcel.on('click',function(){
 			// $('#list').html();
 			var word = $('.txt').val();
@@ -60,19 +73,8 @@ var searchObj = {
 					for( var i = 0; i < res.s.length; i++){
 						console.log(res.s[i])
 						var asplit = res.s[i].split('$');
-						// var a =;
-						// var b = ;
-						// var c =;
-						// // arr2.join(c)
 						arr1.push(asplit[3]);
 						arr.push( asplit[0]+ asplit[1]+asplit[3] );
-						// arr2.push(asplit[5]);
-						// console.log(arr2)
-						// var lo=[],la=[];
-						// for( var a= 0;a < arr2.length; a++){
-						// 	la.push(arr2[i].split(',')[0]);
-						// 	lo.pusharr2[i].split(',')[1];
-						// }
 						html +='<li><a href="#list-'+ res.s[i].latitude +'-'+ res.s[i].longitude +'">'+arr1[i]+'<p class="address">'+arr[i]+'</p></a></li>';
 					}
 					$('#list1').html(html);

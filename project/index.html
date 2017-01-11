@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/pace.css">
+	<link rel="stylesheet" href="css/swipe.css">
 	<script src="js/rem.js"></script>
 </head>
 <body>
@@ -28,7 +30,37 @@
 	</div>
 		
 	</div>
-	<div id="detail" class="section"><a href="#search">餐厅详情页</a></div>
+	<div id="detail" class="section">
+		<div class="shopHeader">
+			<div class="shopHeader-main">
+				<img class="shopHeader-logo" src="https://fuss10.elemecdn.com/7/d3/48a777a6b444dc317cc24d101220cjpeg.jpeg?imageMogr/quality/80/format/webp/">
+				<div class="shopheader-content"> 
+					<h2 class="shopheader-name" >肯德基宅急送（庆阳南大街店）</h2> 
+					<p class="shopheader-servercontent"> 
+						<span class="shopheader-server">商家配送</span> 
+						<span class="shopheader-server" >34分钟送达</span> 
+						<span class="shopheader-server" >配送费¥9</span> 
+					</p> 
+					<div class="shopheader-activities" > 
+						<ul > 
+							<li> 
+								<div class="activity-wrap nowrap"> 
+									<i class="activity-icon" > 减 </i>
+									<span class="activity-description" > 
+										<span>满70减15(不与美食活动同享)（限在线支付）</span>
+									</span> 
+								</div> 
+							</li> 
+						</ul>  
+					
+					</div> 
+
+				</div>
+				</div>
+				<div class="shopheader-notice" > <span>本餐厅不使用饿了么配送，由肯德基宅急送官方品牌配送，会员用户无法享受免配送费服务</span>  </div>
+			
+		</div>
+	</div>
 	<div id="city" class="section">
 	<div class="warp">
 		<p class="cityname1"><a>城市选择页</a></p>
@@ -42,21 +74,112 @@
 	
 	</div>
 	<div id="list" class="section">
-	<p class="a">
-	<a href="###">南岗区哈西万达广场</a></p>
-	<div class="banner"></div>
-	<div class="content">
-		<div id="box">
-			
+	<p class="a"><a id="name"></a></p>
+	<!-- 轮播图 -->
+	<div class="swipe" id="mySwipe">
+		<div class="swipe-wrap">
+			<div class="item" id="item" >
+			  <!--   <a href="javascript:"> 
+			      	<div class="container">
+			      		<img src="//fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"> 
+			       	</div> 
+			      	<span class="title">美食</span>
+			    </a>
+				<a href="javascript:"> 
+					<div class="container">
+						<img src="//fuss10.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg"> 
+					</div> 
+					<span class="title">甜品饮品</span> 
+				</a>
+				<a href="javascript:"> 
+					<div class="container">
+					 	<img src="//fuss10.elemecdn.com/1/c6/8edcaeb8cd35845946db6673660fcjpeg.jpeg">
+					</div> 
+					<span class="title">商店超市</span>
+				</a>
+				<a href="javascript:"> 
+					<div class="container">
+						<img src="//fuss10.elemecdn.com/a/fa/d41b04d520d445dc5de42dae9a384jpeg.jpeg">
+					</div>
+					<span class="title">新店特惠</span>
+				</a>
+				<a href="javascript:">
+					<div class="container">
+						<img src="//fuss10.elemecdn.com/3/84/8e031bf7b3c036b4ec19edff16e46jpeg.jpeg">
+					</div> 
+					<span class="title">准时达</span> 
+				</a>
+				<a href="javascript:">
+					<div class="container">
+					    <img src="//fuss10.elemecdn.com/d/38/7bddb07503aea4b711236348e2632jpeg.jpeg">
+					</div> 
+					<span class="title">简餐</span> 
+				</a>
+				<a href="javascript:"> 
+					<div class="container"> 
+						<img src="//fuss10.elemecdn.com/e/7e/02b72b5e63c127d5bfae57b8e4ab1jpeg.jpeg">  
+					</div>
+					<span class="title">土豪推荐</span> 
+				</a>
+				<a href="javascript:"> 
+					<div class="container"> 
+						<img src="//fuss10.elemecdn.com/8/83/171fd98b85dee3b3f4243b7459b48jpeg.jpeg">
+					</div> 
+					<span class="title">鲜花蛋糕</span> 
+				</a>  -->
+			</div>
+			<div class="item" id="item1">
+			    <!-- <a href="javascript:"> 
+				    <div class="container"> 
+				    	<img src="//fuss10.elemecdn.com/b/7f/432619fb21a40b05cd25d11eca02djpeg.jpeg"> 
+				    </div> 
+				    <span class="title">汉堡炸鸡</span> 
+			    </a>
+			    <a href="javascript:"> 
+				    <div class="container"> 
+				    	<img src="//fuss10.elemecdn.com/6/1a/1e0f448be0624c62db416e864d2afjpeg.jpeg"> 
+				    </div> 
+				    <span class="title">日韩料理</span> 
+			    </a>
+			    <a href="javascript:"> 
+				    <div class="container"> 
+				    	<img src="//fuss10.elemecdn.com/3/c7/a9ef469a12e7a596b559145b87f09jpeg.jpeg"> 
+				    </div> 
+				    <span class="title">麻辣烫</span> 
+			    </a>
+			    <a href="javascript:"> 
+				    <div class="container"> 
+				    	<img src="//fuss10.elemecdn.com/9/7c/9700836a33e05c2410bda8da59117jpeg.jpeg">
+				    </div> 
+				    <span class="title">川湘菜</span> 
+			    </a>
+			    <a href="javascript:"> 
+				    <div class="container"> 
+				   		<img src="//fuss10.elemecdn.com/2/17/244241b514affc0f12f4168cf6628jpeg.jpeg"> 
+				    </div> 
+				    <span class="title">包子粥店</span> 
+			    </a> -->
+			   </div>
+			</div>
+			<ul id="position" class="hidden">
+			    <li class="cur"></li>
+			    <li style="margin-left:-5px"></li>
+			</ul>
 		</div>
+
+	<div class="content">
+		<div id="box"></div>
 	</div>
-		
-	</div>
+</div>
 	<script src="js/zepto.js"></script>
+	<script src="js/swipe.js"></script>
+	<script src="js/fastclick.js"></script>
+	<!-- <script src="js/pace.js"></script> -->
 	<script src="js/module/searchObj.js"></script>
 	<script src="js/module/cityObj.js"></script>
 	<script src="js/module/detailObj.js"></script>
 	<script src="js/module/listObj.js"></script>
 	<script src="js/index.js"></script>
+	
 </body>
 </html>

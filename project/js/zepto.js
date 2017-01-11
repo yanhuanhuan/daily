@@ -1649,7 +1649,10 @@ window.$ === undefined && (window.$ = Zepto)
       .bind('MSGestureEnd', function(e){
         var swipeDirectionFromVelocity =
           e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
-        if (swipeDirectionFromVelocity) {
+        if( 'swipe' == undefined ){
+               return
+            }
+        if (swipeDirectionFromVelocity ) {
           touch.el.trigger('swipe')
           touch.el.trigger('swipe'+ swipeDirectionFromVelocity)
         }
@@ -1698,9 +1701,11 @@ window.$ === undefined && (window.$ = Zepto)
             (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
 
           swipeTimeout = setTimeout(function() {
+            
             touch.el.trigger('swipe')
-            touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
-            touch = {}
+               touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
+                touch = {}
+           
           }, 0)
 
         // normal tap
