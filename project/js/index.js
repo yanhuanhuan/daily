@@ -1,4 +1,21 @@
-
+function storage(nameSpace, data){
+	//多态  用同一个API,去实现不同方法（存、取操作）
+	if(data) {
+		//存操作
+		localStorage.setItem(nameSpace, JSON.stringify(data));
+		return;
+	}
+	return JSON.parse(localStorage.getItem(nameSpace))	 	
+}
+function imgLoad( url ){
+		var imgstr = url;
+		var a = imgstr.charAt(0);
+		var b = imgstr.slice(1,3);
+		var c = imgstr.slice(3);
+		var d = imgstr.slice(32);
+		img = a + '/' + b + '/' + c + '.'+ d;
+		return img 
+	}
 
 //创建一个hash值 与模块 映射关系表
 var hashMap = {
@@ -14,7 +31,7 @@ var curModule = null;  //当前模块
 
 function routeController(hash){
 	//路由控制方法  hash = address  hash = citylist
-	var chash = '';
+	var chash = hash;
 	var module = hashMap[hash] || hashMap['search']; // 得到对应hash值的对应的模块对象
 	if( hash.indexOf('search') !== -1){
 		module = searchObj;
@@ -23,8 +40,13 @@ function routeController(hash){
 	}
 	if( hash.indexOf('list') !== -1){
 		module = listObj;
-		// chash = 'search';
-		module.loadlist(hash);
+		chash = 'list';
+		module.loadReslist(hash);
+	}
+	if( hash.indexOf('detail') !== -1){
+		module = detailObj;
+		chash = 'detail';
+		module.loadList(hash)
 	}
 	prevModule = curModule; 
 	curModule = module; 

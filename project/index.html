@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/pace.css">
+	<link rel="stylesheet" href="css/swipe.css">
 	<script src="js/rem.js"></script>
 </head>
 <body>
@@ -28,7 +30,17 @@
 	</div>
 		
 	</div>
-	<div id="detail" class="section"><a href="#search">餐厅详情页</a></div>
+	<div id="detail" class="section">
+		<div class="shopHeader"></div>
+		<div class="main">
+			<div class="huanhuan"><ul id="leftList"></ul></div>
+			<div id="rightList" class="container ">
+			<div class="scroller">
+				<dl></dl>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="city" class="section">
 	<div class="warp">
 		<p class="cityname1"><a>城市选择页</a></p>
@@ -42,21 +54,37 @@
 	
 	</div>
 	<div id="list" class="section">
-	<p class="a">
-	<a href="###">南岗区哈西万达广场</a></p>
-	<div class="banner"></div>
-	<div class="content">
-		<div id="box">
-			
+	<p class="a"><a id="name"></a></p>
+	<!-- 轮播图 -->
+	<div class="swipe" id="mySwipe">
+		<div class="swipe-wrap">
+			<div class="item" id="item" >
+				 <!-- 轮播图第一页 -->
+			</div>
+			<div class="item" id="item1">
+				   <!-- 轮播图第二页 -->
+			</div>
+			</div>
+			<ul id="position" class="hidden">
+			    <li class="cur"></li>
+			    <li style="margin-left:-5px"></li>
+			</ul>
 		</div>
+
+	<div class="content">
+		<!-- <div id="box"></div> -->
 	</div>
-		
-	</div>
+</div>
 	<script src="js/zepto.js"></script>
+	<script src="js/swipe.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script src="js/iscroll.js"></script>
+	<!-- <script src="js/pace.js"></script> -->
 	<script src="js/module/searchObj.js"></script>
 	<script src="js/module/cityObj.js"></script>
 	<script src="js/module/detailObj.js"></script>
 	<script src="js/module/listObj.js"></script>
 	<script src="js/index.js"></script>
+	
 </body>
 </html>

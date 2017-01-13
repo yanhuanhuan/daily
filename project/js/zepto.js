@@ -2,8 +2,8 @@
 //jQuery一模一样
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 
-var Zepto = (function() {
-  var undefined, key, $, classList, emptyArray = [], slice = emptyArray.slice, filter = emptyArray.filter,
+var Zepto = (function() 
+{  var undefined, key, $, classList, emptyArray = [], slice = emptyArray.slice, filter = emptyArray.filter,
     document = window.document,
     elementDisplay = {}, classCache = {},
     cssNumber = { 'column-count': 1, 'columns': 1, 'font-weight': 1, 'line-height': 1,'opacity': 1, 'z-index': 1, 'zoom': 1 },
@@ -1649,7 +1649,10 @@ window.$ === undefined && (window.$ = Zepto)
       .bind('MSGestureEnd', function(e){
         var swipeDirectionFromVelocity =
           e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
-        if (swipeDirectionFromVelocity) {
+        if( 'swipe' == undefined ){
+               return
+            }
+        if (swipeDirectionFromVelocity ) {
           touch.el.trigger('swipe')
           touch.el.trigger('swipe'+ swipeDirectionFromVelocity)
         }
@@ -1698,9 +1701,13 @@ window.$ === undefined && (window.$ = Zepto)
             (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
 
           swipeTimeout = setTimeout(function() {
+            if (!touch.el) {
+              return;
+            }
             touch.el.trigger('swipe')
-            touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
-            touch = {}
+               touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
+                touch = {}
+           
           }, 0)
 
         // normal tap
